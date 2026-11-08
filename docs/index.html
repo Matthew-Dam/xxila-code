@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>X.X.I.L.A. C.O.D.E — sci-fi code editor for Windows, macOS and Linux</title>
+<meta name="description" content="X.X.I.L.A. C.O.D.E is a free neon-grid code editor with real IDE power: language servers, debugger, AI assistants of your choice, a big-data viewer and robotics tools. Download for Windows, macOS and Linux.">
+<meta property="og:title" content="X.X.I.L.A. C.O.D.E">
+<meta property="og:description" content="A sci-fi code editor with real IDE power. Free for Windows, macOS and Linux.">
+<meta property="og:image" content="https://matthew-dam.github.io/xxila-code/img/editor.webp">
+<meta name="theme-color" content="#010409">
+<link rel="icon" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="./"><img src="img/icon.png" alt="">X.X.I.L.A. C.O.D.E</a>
+    <nav><a href="#download">DOWNLOAD</a><a href="#features">FEATURES</a><a href="#install">INSTALL HELP</a><a href="privacy.html">PRIVACY</a></nav>
+  </header>
+
+  <div class="hero">
+    <h1>X.X.I.L.A. C.O.D.E</h1>
+    <p class="lead">A sci-fi code editor with real IDE power. Language servers, a debugger, the AI assistant of your choice, a big-data viewer and robotics tools, wrapped in a neon grid.</p>
+    <a id="main-dl" class="btn big" href="#download">
+      <svg viewBox="0 0 24 24"><path d="M11 3h2v10.2l3.6-3.6 1.4 1.4-6 6-6-6 1.4-1.4 3.6 3.6V3zM4 19h16v2H4z"/></svg>
+      <span id="main-dl-label">DOWNLOAD</span>
+    </a>
+    <div class="sub" id="main-dl-sub">Free · Windows · macOS · Linux</div>
+    <div class="ver" id="ver"></div>
+  </div>
+
+  <section id="download">
+    <h2>DOWNLOAD</h2>
+    <div class="grid">
+      <div class="card os" data-os="windows">
+        <h3>WINDOWS</h3>
+        <p>Windows 10 and 11, 64-bit.</p>
+        <div class="links">
+          <a class="btn" data-file="XXILA-CODE-Setup-x64.exe">INSTALLER (.EXE)</a>
+          <a class="btn orange" id="store-btn" hidden>MICROSOFT STORE</a>
+        </div>
+      </div>
+      <div class="card os" data-os="mac">
+        <h3>MACOS</h3>
+        <p>macOS 12 or newer. Pick your chip: Apple menu → About This Mac.</p>
+        <div class="links">
+          <a class="btn" data-file="XXILA-CODE-mac-arm64.dmg">APPLE SILICON (M1–M4)</a>
+          <a class="btn" data-file="XXILA-CODE-mac-x64.dmg">INTEL MAC</a>
+        </div>
+      </div>
+      <div class="card os" data-os="linux">
+        <h3>LINUX</h3>
+        <p>64-bit. AppImage runs on most distros; .deb for Ubuntu, Debian, Mint, Pop!_OS.</p>
+        <div class="links">
+          <a class="btn" data-file="XXILA-CODE-x86_64.AppImage">APPIMAGE</a>
+          <a class="btn" data-file="xxila-code_amd64.deb">DEBIAN / UBUNTU (.DEB)</a>
+        </div>
+      </div>
+    </div>
+    <p class="sub">All files and checksums: <a id="all-releases" href="https://github.com/Matthew-Dam/xxila-code/releases">release page</a>. On phones and tablets? This is a desktop app; open this page on a computer.</p>
+  </section>
+
+  <section id="features">
+    <h2>WHAT IT DOES</h2>
+    <div class="grid">
+      <div class="card"><h3>REAL EDITOR</h3><p>Monaco, the engine inside VS Code: multi-cursor, minimap, sticky scroll, split view, 15+ themes.</p></div>
+      <div class="card"><h3>CODE INTELLIGENCE</h3><p>Language servers for Python, C/C++, Rust, Go and more: completion, go-to-definition, rename, diagnostics.</p></div>
+      <div class="card"><h3>DEBUGGER</h3><p>Python breakpoints, stepping, variables, watch expressions and call stack.</p></div>
+      <div class="card"><h3>YOUR AI, YOUR CHOICE</h3><p>Claude, GPT, Gemini, Mistral, Groq, DeepSeek, OpenRouter, or fully local with Ollama and LM Studio. Inline completions included.</p></div>
+      <div class="card"><h3>BIG DATA VIEWER</h3><p>Open multi-gigabyte CSV and log files instantly. Table view, search, filter to file, column profiling.</p></div>
+      <div class="card"><h3>ROBOTICS & SERIAL</h3><p>Arduino CLI, PlatformIO, MicroPython, ROS 2 tools and a live serial oscilloscope with XY mode.</p></div>
+      <div class="card"><h3>TIME MACHINE</h3><p>Every save is snapshotted. Scrub back through history and restore any version.</p></div>
+      <div class="card"><h3>EXTENSIONS</h3><p>Install themes and snippets from the Open VSX marketplace, or write sandboxed plugins.</p></div>
+      <div class="card"><h3>SCI-FI INTERFACE</h3><p>Live system HUD, synthesized interface sounds and a boot sequence. Every effect can be switched off.</p></div>
+    </div>
+  </section>
+
+  <section id="screens">
+    <h2>SCREENS</h2>
+    <div class="shots">
+      <figure><img src="img/editor.webp" alt="Editor with Python code, file explorer and system HUD" loading="lazy" width="1600" height="960"><figcaption>Editor, language server and system HUD</figcaption></figure>
+      <figure><img src="img/scope.webp" alt="Serial monitor plotting live sensor values" loading="lazy" width="1600" height="960"><figcaption>Serial Scope plotting a live sensor stream</figcaption></figure>
+      <figure><img src="img/bigdata.webp" alt="Big data viewer showing a 12 million row CSV" loading="lazy" width="1600" height="960"><figcaption>A 647 MB, 12-million-row CSV opened instantly</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="install">
+    <h2>INSTALL HELP</h2>
+    <details><summary>WINDOWS SAYS “WINDOWS PROTECTED YOUR PC”</summary><div>
+      The installer is new and not yet widely downloaded, so SmartScreen shows a warning. Click <b>More info</b> → <b>Run anyway</b>.
+      Installing from the Microsoft Store avoids this warning entirely.
+    </div></details>
+    <details><summary>MACOS SAYS THE APP “CAN’T BE OPENED” OR “CAN’T BE VERIFIED”</summary><div>
+      Drag the app into <b>Applications</b>, then <b>right-click it → Open → Open</b>. You only do this once.
+      On macOS 15 and newer: try to open it, then go to <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>.
+      If macOS reports the app as “damaged”, run this once in Terminal:
+      <pre>xattr -cr "/Applications/X.X.I.L.A. C.O.D.E.app"</pre>
+    </div></details>
+    <details><summary>LINUX: RUNNING THE APPIMAGE</summary><div>
+      Make it executable, then run it:
+      <pre>chmod +x XXILA-CODE-x86_64.AppImage
+./XXILA-CODE-x86_64.AppImage</pre>
+      If it complains about FUSE on Ubuntu 22.04 or newer: <code>sudo apt install libfuse2</code> (24.04: <code>libfuse2t64</code>).<br>
+      For the .deb: <code>sudo apt install ./xxila-code_amd64.deb</code>, then launch it from your app menu.
+    </div></details>
+    <details><summary>UPDATES</summary><div>
+      The app checks once a day whether a newer version is on this page and offers to open it. You can turn that off in Settings.
+      Microsoft Store installs update automatically through the Store.
+    </div></details>
+    <details><summary>IPHONE AND IPAD</summary><div>
+      Not available. Apple doesn’t allow apps on iPhone or iPad to run terminals, compilers or language servers, which this editor depends on.
+    </div></details>
+  </section>
+
+  <footer>
+    <span>© 2026 Xxila-Tech (Matthew Damptey) · Free to use</span>
+    <span><a href="privacy.html">Privacy policy</a> · <a href="mailto:dampteymatthew13579@gmail.com">dampteymatthew13579@gmail.com</a></span>
+  </footer>
+</div>
+
+<script>
+(() => {
+  const OWNER = 'Matthew-Dam', REPO = 'xxila-code';
+  // Paste the Store link here after Microsoft approves the app, e.g. 'https://apps.microsoft.com/detail/9XXXXXXXXXXX'
+  const STORE_URL = '';
+  const DL = (f) => `https://github.com/${OWNER}/${REPO}/releases/latest/download/${f}`;
+  document.querySelectorAll('[data-file]').forEach((a) => (a.href = DL(a.dataset.file)));
+  const store = document.getElementById('store-btn');
+  if (STORE_URL) { store.href = STORE_URL; store.hidden = false; }
+
+  const ua = navigator.userAgent, uad = navigator.userAgentData;
+  const plat = (uad && uad.platform) || navigator.platform || '';
+  const mobile = /Android|iPhone|iPad|iPod/i.test(ua) || (uad && uad.mobile) || (/Mac/.test(plat) && navigator.maxTouchPoints > 1);
+  let os = /Win/i.test(plat) ? 'windows' : /Mac/i.test(plat) ? 'mac' : /Linux|X11/i.test(plat + ua) ? 'linux' : '';
+  if (mobile) os = '';
+  const btn = document.getElementById('main-dl'), label = document.getElementById('main-dl-label'), sub = document.getElementById('main-dl-sub');
+  const set = (file, text, note) => { btn.href = DL(file); label.textContent = text; if (note) sub.textContent = note; };
+  if (os) document.querySelector(`[data-os="${os}"]`).classList.add('hl');
+  if (os === 'windows') set('XXILA-CODE-Setup-x64.exe', 'DOWNLOAD FOR WINDOWS', 'Windows 10 / 11 · 64-bit · other systems below');
+  else if (os === 'linux') set('XXILA-CODE-x86_64.AppImage', 'DOWNLOAD FOR LINUX', 'AppImage · .deb also available below');
+  else if (os === 'mac') {
+    set('XXILA-CODE-mac-arm64.dmg', 'DOWNLOAD FOR MAC', 'Apple Silicon build · Intel Mac version below');
+    if (uad && uad.getHighEntropyValues) uad.getHighEntropyValues(['architecture']).then((v) => {
+      if (v.architecture === 'x86') set('XXILA-CODE-mac-x64.dmg', 'DOWNLOAD FOR MAC', 'Intel build · Apple Silicon version below');
+    }).catch(() => {});
+  } else if (mobile) sub.textContent = 'Desktop app — open this page on a Windows, Mac or Linux computer';
+
+  fetch(`https://api.github.com/repos/${OWNER}/${REPO}/releases/latest`).then((r) => (r.ok ? r.json() : null)).then((j) => {
+    if (!j) return;
+    const d = new Date(j.published_at);
+    document.getElementById('ver').textContent = `LATEST: ${j.tag_name} · ${d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}`;
+  }).catch(() => {});
+})();
+</script>
+</body>
+</html>
