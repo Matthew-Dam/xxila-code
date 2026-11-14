@@ -105,6 +105,11 @@ nav a.btn { color: #00161b; }
   box-shadow: 0 30px 80px -20px rgba(0, 0, 0, .8), 0 0 0 1px rgba(0, 0, 0, .6), 0 0 60px -10px rgba(0, 229, 255, .18);
 }
 .window img { display: block; width: 100%; height: auto; cursor: zoom-in; }
+.window video { display: block; width: 100%; height: auto; background: #000; }
+.gallery { margin-top: 96px; text-align: center; }
+.gallery h3 { font-size: 20px; margin-bottom: 20px; }
+.thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.thumbs .window { border-radius: 10px; }
 .hero-shot { margin: 64px auto 0; max-width: 1120px; }
 
 /* ---------- stats ---------- */
@@ -232,7 +237,7 @@ footer a { color: var(--muted); }
   .brand { font-size: 12px; letter-spacing: 2px; }
   .hero { padding-top: 64px; }
   .hero-shot { margin-top: 44px; }
-  .grid, .dl-grid { grid-template-columns: 1fr; }
+  .grid, .dl-grid, .thumbs { grid-template-columns: 1fr; }
   section { padding-top: 80px; }
   .band { padding: 48px 20px; }
 }

@@ -44,7 +44,9 @@
       <div class="ver" id="ver"></div>
 
       <figure class="window hero-shot">
-        <img src="img/editor.webp" alt="X.X.I.L.A. C.O.D.E editing a Python path planner, with the terminal and the live system HUD" width="1920" height="1020">
+        <video autoplay muted loop playsinline preload="auto" poster="media/code-poster.webp" width="1600" height="850" aria-label="Typing Python code in X.X.I.L.A. C.O.D.E and running it in the built-in terminal">
+          <source src="media/code.mp4" type="video/mp4">
+        </video>
       </figure>
 
       <div class="stats">
@@ -93,8 +95,10 @@
           </ul>
         </div>
         <figure class="window">
-          <img src="img/scope.webp" alt="Arduino motor controller code with Serial Scope plotting IMU and sonar data" loading="lazy" width="1920" height="1020">
-          <figcaption>Serial Scope plotting IMU and sonar readings at 50 Hz</figcaption>
+          <video muted loop playsinline preload="none" poster="media/scope-poster.webp" width="1600" height="850" aria-label="Serial Scope plotting live IMU and sonar data, then switching to XY mode">
+            <source src="media/scope.mp4" type="video/mp4">
+          </video>
+          <figcaption>Serial Scope streaming IMU and sonar readings, then switching to XY mode</figcaption>
         </figure>
       </div>
 
@@ -110,9 +114,39 @@
           </ul>
         </div>
         <figure class="window">
-          <img src="img/bigdata.webp" alt="Big Data Viewer showing a 119 MB, two-million-row telemetry CSV" loading="lazy" width="1920" height="1020">
-          <figcaption>A 119 MB, 2,000,000-row telemetry log, opened instantly</figcaption>
+          <video muted loop playsinline preload="none" poster="media/bigdata-poster.webp" width="1600" height="850" aria-label="Searching a two-million-row CSV for COLLISION">
+            <source src="media/bigdata.mp4" type="video/mp4">
+          </video>
+          <figcaption>Searching 2,000,000 rows (119 MB): 4,726 matches in about 2 seconds</figcaption>
         </figure>
+      </div>
+
+      <div class="row flip">
+        <div class="text">
+          <h3>Make it yours</h3>
+          <p>Switch the whole interface with one key: editor, panels and HUD change together.</p>
+          <ul class="checks">
+            <li>More than 15 built-in themes, from Grid to Daylight</li>
+            <li>More themes and snippets from Open VSX</li>
+            <li>Boot sequence, interface sounds and glow effects</li>
+            <li>Every effect can be switched off</li>
+          </ul>
+        </div>
+        <figure class="window">
+          <video muted loop playsinline preload="none" poster="media/themes-poster.webp" width="1600" height="850" aria-label="Cycling through the built-in color themes">
+            <source src="media/themes.mp4" type="video/mp4">
+          </video>
+          <figcaption>Cycling through the built-in themes</figcaption>
+        </figure>
+      </div>
+
+      <div class="gallery">
+        <h3>More screenshots</h3>
+        <div class="thumbs">
+          <figure class="window"><img src="img/editor.webp" alt="Editor with file explorer, terminal output and system HUD" loading="lazy" width="1920" height="1020"></figure>
+          <figure class="window"><img src="img/scope.webp" alt="Arduino firmware with Serial Scope plotting sensor data" loading="lazy" width="1920" height="1020"></figure>
+          <figure class="window"><img src="img/bigdata.webp" alt="Big Data Viewer showing a two-million-row CSV" loading="lazy" width="1920" height="1020"></figure>
+        </div>
       </div>
     </div>
   </section>
@@ -150,9 +184,9 @@
           <p>CPU, memory, network and a focus timer at the side of your code. Hide it with one key.</p>
         </div>
         <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5h5"/><path d="M17 3h4v4"/></svg></div>
-          <h3>Make it yours</h3>
-          <p>Boot sequence, interface sounds and glow effects. Each one can be switched off.</p>
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Private by design</h3>
+          <p>No account, no analytics, no tracking. Your code stays on your computer.</p>
         </div>
       </div>
     </div>
@@ -324,6 +358,16 @@
     document.getElementById('ver').textContent = `Latest: ${j.tag_name} · ${when}`;
     document.getElementById('ver-pill').textContent = `${j.tag_name} is out · Free for Windows, macOS and Linux`;
   }).catch(() => {});
+
+  // play feature clips only while they're on screen
+  const vids = document.querySelectorAll('video');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      const v = e.target;
+      if (e.isIntersecting) { if (v.preload === 'none') v.preload = 'auto'; v.play().catch(() => {}); } else v.pause();
+    }), { threshold: 0.35 });
+    vids.forEach((v) => io.observe(v));
+  } else vids.forEach((v) => { v.preload = 'auto'; v.play().catch(() => {}); });
 
   // click a screenshot to view it full size
   document.querySelectorAll('.window img').forEach((img) => img.addEventListener('click', () => {
