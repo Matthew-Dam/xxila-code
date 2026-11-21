@@ -103,6 +103,8 @@ jobs:
           mkdir -p out
           cd app/release
           for f in XXILA-CODE-*.exe *.AppImage *.deb *.dmg; do [ -f "$f" ] && cp "$f" ../../out/; done
+          # Auto-update metadata (Windows installer + Linux AppImage) and the delta-download map.
+          for f in latest.yml latest-linux.yml XXILA-CODE-Setup-x64.exe.blockmap; do [ -f "$f" ] && cp "$f" ../../out/; done
           mkdir -p ../../store
           for f in *.appx *.msix; do [ -f "$f" ] && cp "$f" ../../store/; done
           ls -la ../../out ../../store
